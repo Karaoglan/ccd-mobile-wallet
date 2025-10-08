@@ -12,7 +12,9 @@ function App() {
   const [verified, setVerified] = useState(false);
 
   async function ageCheck() {
+    console.log('checking!!')
     const provider = await detectConcordiumProvider();
+    console.log('couldnt finish detectConnector (maybe only for browser wallets?')
     try {
       const account = await provider.connect();
 
@@ -59,7 +61,7 @@ function App() {
         {"Verify with Concordium wallet"}
       </a>
       <br />
-      VERIFIED {verified ? <p>TRUE</p> : <p>FALSE</p>}
+      VERIFIED or NOT {verified ? <p>TRUE</p> : <p>FALSE</p>}
     </>
   );
 }
